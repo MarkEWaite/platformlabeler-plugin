@@ -29,86 +29,86 @@ import org.junit.jupiter.api.Test;
 
 public class LabelConfigTest {
 
-  private final LabelConfig labelConfig;
+    private final LabelConfig labelConfig;
 
-  public LabelConfigTest() {
-    labelConfig = new LabelConfig();
-  }
+    public LabelConfigTest() {
+        labelConfig = new LabelConfig();
+    }
 
-  @Test
-  void testIsArchitecture() {
-    assertTrue(labelConfig.isArchitecture());
-  }
+    @Test
+    void testIsArchitecture() {
+        assertTrue(labelConfig.isArchitecture());
+    }
 
-  @Test
-  void testSetArchitecture() {
-    labelConfig.setArchitecture(false);
-    assertFalse(labelConfig.isArchitecture());
-  }
+    @Test
+    void testSetArchitecture() {
+        labelConfig.setArchitecture(false);
+        assertFalse(labelConfig.isArchitecture());
+    }
 
-  @Test
-  void testIsName() {
-    assertTrue(labelConfig.isName());
-  }
+    @Test
+    void testIsName() {
+        assertTrue(labelConfig.isName());
+    }
 
-  @Test
-  void testSetName() {
-    labelConfig.setName(false);
-    assertFalse(labelConfig.isName());
-  }
+    @Test
+    void testSetName() {
+        labelConfig.setName(false);
+        assertFalse(labelConfig.isName());
+    }
 
-  @Test
-  void testIsVersion() {
-    assertTrue(labelConfig.isVersion());
-  }
+    @Test
+    void testIsVersion() {
+        assertTrue(labelConfig.isVersion());
+    }
 
-  @Test
-  void testSetVersion() {
-    labelConfig.setVersion(false);
-    assertFalse(labelConfig.isVersion());
-  }
+    @Test
+    void testSetVersion() {
+        labelConfig.setVersion(false);
+        assertFalse(labelConfig.isVersion());
+    }
 
-  @Test
-  void testIsArchitectureName() {
-    assertTrue(labelConfig.isArchitectureName());
-  }
+    @Test
+    void testIsArchitectureName() {
+        assertTrue(labelConfig.isArchitectureName());
+    }
 
-  @Test
-  void testSetArchitectureName() {
-    labelConfig.setArchitectureName(false);
-    assertFalse(labelConfig.isArchitectureName());
-  }
+    @Test
+    void testSetArchitectureName() {
+        labelConfig.setArchitectureName(false);
+        assertFalse(labelConfig.isArchitectureName());
+    }
 
-  @Test
-  void testIsNameVersion() {
-    assertTrue(labelConfig.isNameVersion());
-  }
+    @Test
+    void testIsNameVersion() {
+        assertTrue(labelConfig.isNameVersion());
+    }
 
-  @Test
-  void testSetNameVersion() {
-    labelConfig.setNameVersion(false);
-    assertFalse(labelConfig.isNameVersion());
-  }
+    @Test
+    void testSetNameVersion() {
+        labelConfig.setNameVersion(false);
+        assertFalse(labelConfig.isNameVersion());
+    }
 
-  @Test
-  void testIsArchitectureNameVersion() {
-    assertTrue(labelConfig.isArchitectureNameVersion());
-  }
+    @Test
+    void testIsArchitectureNameVersion() {
+        assertTrue(labelConfig.isArchitectureNameVersion());
+    }
 
-  @Test
-  void testSetArchitectureNameVersion() {
-    labelConfig.setArchitectureNameVersion(false);
-    assertFalse(labelConfig.isArchitectureNameVersion());
-  }
+    @Test
+    void testSetArchitectureNameVersion() {
+        labelConfig.setArchitectureNameVersion(false);
+        assertFalse(labelConfig.isArchitectureNameVersion());
+    }
 
-  @Test
-  void testIsIncludeWindowsFeatureUpdate() {
-    assertTrue(labelConfig.isIncludeWindowsFeatureUpdate());
-  }
+    @Test
+    void testIsIncludeWindowsFeatureUpdate() {
+        assertTrue(labelConfig.isIncludeWindowsFeatureUpdate());
+    }
 
-  @Test
-  void testSetIncludeWindowsFeatureUpdate() {
-    labelConfig.setIncludeWindowsFeatureUpdate(true);
-    assertTrue(labelConfig.isIncludeWindowsFeatureUpdate());
-  }
+    @Test
+    void testSetIncludeWindowsFeatureUpdate() {
+        labelConfig.setIncludeWindowsFeatureUpdate(true);
+        assertTrue(labelConfig.isIncludeWindowsFeatureUpdate());
+    }
 }

@@ -32,40 +32,41 @@ import org.junit.jupiter.api.Test;
 
 public class WindowsReleaseTest {
 
-  private final WindowsRelease windowsRelease = new WindowsRelease();
-  private final WindowsRelease windowsReleaseFile;
+    private final WindowsRelease windowsRelease = new WindowsRelease();
+    private final WindowsRelease windowsReleaseFile;
 
-  public WindowsReleaseTest() throws IOException {
-    File dataFile = new File(getClass().getResource("windows/10.0.1903/reg-query").getFile());
-    windowsReleaseFile = new WindowsRelease(dataFile);
-  }
-
-  @Test
-  void testReleaseFile() {
-    assertThat(windowsReleaseFile.release(), is("1903"));
-  }
-
-  @Test
-  void testReleaseNotWindows() {
-    if (!isWindows()) {
-      assertThat(windowsRelease.release(), is(PlatformDetailsTask.UNKNOWN_WINDOWS_VALUE_STRING));
+    public WindowsReleaseTest() throws IOException {
+        File dataFile = new File(getClass().getResource("windows/10.0.1903/reg-query").getFile());
+        windowsReleaseFile = new WindowsRelease(dataFile);
     }
-  }
 
-  @Test
-  void testRelease() {
-    if (isWindows()) {
-      assertThat(windowsRelease.release(), matchesPattern("[12][0-9][0-9][0-9]"));
+    @Test
+    void testReleaseFile() {
+        assertThat(windowsReleaseFile.release(), is("1903"));
     }
-  }
 
-  @Test
-  void testDistributorId() {
-    assertThat(windowsRelease.distributorId(), is("Microsoft"));
-    assertThat(windowsReleaseFile.distributorId(), is("Microsoft"));
-  }
+    @Test
+    void testReleaseNotWindows() {
+        if (!isWindows()) {
+            assertThat(
+                    windowsRelease.release(), is(PlatformDetailsTask.UNKNOWN_WINDOWS_VALUE_STRING));
+        }
+    }
 
-  private static boolean isWindows() {
-    return File.pathSeparatorChar == ';';
-  }
+    @Test
+    void testRelease() {
+        if (isWindows()) {
+            assertThat(windowsRelease.release(), matchesPattern("[12][0-9][0-9][0-9]"));
+        }
+    }
+
+    @Test
+    void testDistributorId() {
+        assertThat(windowsRelease.distributorId(), is("Microsoft"));
+        assertThat(windowsReleaseFile.distributorId(), is("Microsoft"));
+    }
+
+    private static boolean isWindows() {
+        return File.pathSeparatorChar == ';';
+    }
 }

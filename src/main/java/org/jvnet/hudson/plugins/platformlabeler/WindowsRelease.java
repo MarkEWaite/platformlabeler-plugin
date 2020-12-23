@@ -37,66 +37,67 @@ import java.util.Map;
 
 /** Windows release class. Provides Windows feature release, 1803, 1903, etc. */
 public class WindowsRelease implements PlatformDetailsRelease {
-  @NonNull private final String release;
+    @NonNull private final String release;
 
-  /** Extract distributor ID and release for current platform. */
-  public WindowsRelease() {
-    Map<String, String> newProps = new HashMap<>();
-    try {
-      Process process =
-          new ProcessBuilder(
-                  "REG",
-                  "QUERY",
-                  "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion",
-                  "/t",
-                  "REG_SZ",
-                  "/v",
-                  "ReleaseId")
-              .start();
-      readWindowsReleaseOutput(process.getInputStream(), newProps);
-    } catch (IOException ignored) {
-      // IGNORE
+    /** Extract distributor ID and release for current platform. */
+    public WindowsRelease() {
+        Map<String, String> newProps = new HashMap<>();
+        try {
+            Process process =
+                    new ProcessBuilder(
+                                    "REG",
+                                    "QUERY",
+                                    "HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion",
+                                    "/t",
+                                    "REG_SZ",
+                                    "/v",
+                                    "ReleaseId")
+                            .start();
+            readWindowsReleaseOutput(process.getInputStream(), newProps);
+        } catch (IOException ignored) {
+            // IGNORE
+        }
+        this.release =
+                newProps.getOrDefault(
+                        "ReleaseId", PlatformDetailsTask.UNKNOWN_WINDOWS_VALUE_STRING);
     }
-    this.release =
-        newProps.getOrDefault("ReleaseId", PlatformDetailsTask.UNKNOWN_WINDOWS_VALUE_STRING);
-  }
 
-  /** Read file to assign distributor ID and release. Package protected for tests. */
-  WindowsRelease(File windowsReleaseFile) throws IOException {
-    Map<String, String> newProps = new HashMap<>();
-    try (FileInputStream stream = new FileInputStream(windowsReleaseFile)) {
-      readWindowsReleaseOutput(stream, newProps);
+    /** Read file to assign distributor ID and release. Package protected for tests. */
+    WindowsRelease(File windowsReleaseFile) throws IOException {
+        Map<String, String> newProps = new HashMap<>();
+        try (FileInputStream stream = new FileInputStream(windowsReleaseFile)) {
+            readWindowsReleaseOutput(stream, newProps);
+        }
+        this.release =
+                newProps.getOrDefault(
+                        "ReleaseId", PlatformDetailsTask.UNKNOWN_WINDOWS_VALUE_STRING);
     }
-    this.release =
-        newProps.getOrDefault("ReleaseId", PlatformDetailsTask.UNKNOWN_WINDOWS_VALUE_STRING);
-  }
 
-  private void readWindowsReleaseOutput(InputStream inputStream, Map<String, String> newProps)
-      throws IOException {
-    try (BufferedReader reader =
-        new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-      reader
-          .lines()
-          .filter(s -> s.contains("REG_SZ"))
-          .map(line -> line.split("REG_SZ", 2))
-          .forEach(parts -> newProps.put(parts[0].trim(), parts[1].trim()));
+    private void readWindowsReleaseOutput(InputStream inputStream, Map<String, String> newProps)
+            throws IOException {
+        try (BufferedReader reader =
+                new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+            reader.lines()
+                    .filter(s -> s.contains("REG_SZ"))
+                    .map(line -> line.split("REG_SZ", 2))
+                    .forEach(parts -> newProps.put(parts[0].trim(), parts[1].trim()));
+        }
     }
-  }
 
-  /**
-   * Return the Windows feature release for this agent.
-   *
-   * @return Windows feature release for this agent
-   */
-  @NonNull
-  @Override
-  public String release() {
-    return release;
-  }
+    /**
+     * Return the Windows feature release for this agent.
+     *
+     * @return Windows feature release for this agent
+     */
+    @NonNull
+    @Override
+    public String release() {
+        return release;
+    }
 
-  @NonNull
-  @Override
-  public String distributorId() {
-    return "Microsoft";
-  }
+    @NonNull
+    @Override
+    public String distributorId() {
+        return "Microsoft";
+    }
 }

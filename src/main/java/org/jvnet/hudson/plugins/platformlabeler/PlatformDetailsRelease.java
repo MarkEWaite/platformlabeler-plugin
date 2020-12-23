@@ -34,19 +34,19 @@ import edu.umd.cs.findbugs.annotations.NonNull;
  */
 public interface PlatformDetailsRelease {
 
-  /**
-   * Return platform specific release details for this agent.
-   *
-   * @return platform specific release details for this agent
-   */
-  @NonNull
-  String release();
+    /**
+     * Return platform specific release details for this agent.
+     *
+     * @return platform specific release details for this agent
+     */
+    @NonNull
+    String release();
 
-  /**
-   * Return platform specific distributor details for this agent.
-   *
-   * @return platform specific distributor details for this agent
-   */
-  @NonNull
-  String distributorId();
+    /**
+     * Return platform specific distributor details for this agent.
+     *
+     * @return platform specific distributor details for this agent
+     */
+    @NonNull
+    String distributorId();
 }
