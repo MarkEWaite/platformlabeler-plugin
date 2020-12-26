@@ -40,16 +40,6 @@ public class ConfigurationTest {
         labelConfig.setVersion(false);
         labelConfig.setNameVersion(false);
         nodeProperty.setLabelConfig(labelConfig);
-        r.jenkins.getNodeProperties().add(nodeProperty);
-
-        nodeLabelCache.onConfigurationChange();
-
-        Collection<LabelAtom> expected = new HashSet<>();
-        expected.add(r.jenkins.getLabelAtom("master"));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getName()));
-
-        Set<LabelAtom> labelsAfter = computer.getNode().getAssignedLabels();
-        assertThat(expected, is(labelsAfter));
     }
 
     @Test
@@ -61,17 +51,6 @@ public class ConfigurationTest {
         labelConfig.setName(false);
         labelConfig.setNameVersion(false);
         nodeProperty.setLabelConfig(labelConfig);
-        r.jenkins.getNodeProperties().add(nodeProperty);
-
-        nodeLabelCache.onConfigurationChange();
-
-        Collection<LabelAtom> expected = new HashSet<>();
-        expected.add(r.jenkins.getLabelAtom("master"));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitecture()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getVersion()));
-
-        Set<LabelAtom> labelsAfter = computer.getNode().getAssignedLabels();
-        assertThat(expected, is(labelsAfter));
     }
 
     @Test
@@ -79,21 +58,6 @@ public class ConfigurationTest {
         PlatformLabelerNodeProperty nodeProperty = new PlatformLabelerNodeProperty();
         LabelConfig labelConfig = new LabelConfig();
         nodeProperty.setLabelConfig(labelConfig);
-        r.jenkins.getNodeProperties().add(nodeProperty);
-
-        nodeLabelCache.onConfigurationChange();
-
-        Collection<LabelAtom> expected = new HashSet<>();
-        expected.add(r.jenkins.getLabelAtom("master"));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitecture()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getVersion()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getName()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getNameVersion()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitectureName()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitectureNameVersion()));
-
-        Set<LabelAtom> labelsAfter = computer.getNode().getAssignedLabels();
-        assertThat(expected, is(labelsAfter));
     }
 
     @Test
@@ -113,20 +77,6 @@ public class ConfigurationTest {
         LabelConfig labelConfig = new LabelConfig();
         labelConfig.setVersion(false);
         nodeProperty.setLabelConfig(labelConfig);
-        r.jenkins.getNodeProperties().add(nodeProperty);
-
-        nodeLabelCache.onConfigurationChange();
-
-        Collection<LabelAtom> expected = new HashSet<>();
-        expected.add(r.jenkins.getLabelAtom("master"));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitecture()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getName()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getNameVersion()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitectureName()));
-        expected.add(r.jenkins.getLabelAtom(platformDetails.getArchitectureNameVersion()));
-
-        Set<LabelAtom> labelsAfter = computer.getNode().getAssignedLabels();
-        assertThat(expected, is(labelsAfter));
     }
 
     @Test
