@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>4.15</version>
+    <version>4.16</version>
     <relativePath />
   </parent>
 
@@ -46,7 +46,7 @@
     <!-- No API's intended to be used, none should be called from outside. -->
     <maven.javadoc.skip>true</maven.javadoc.skip>
     <hpi.compatibleSinceVersion>5.0</hpi.compatibleSinceVersion>
-    <junit.jupiter.version>5.7.0</junit.jupiter.version>
+    <junit.jupiter.version>5.7.1</junit.jupiter.version>
     <slf4jVersion>1.7.26</slf4jVersion>
     <spotbugs.effort>Max</spotbugs.effort>
     <spotbugs.failOnError>true</spotbugs.failOnError>
@@ -58,7 +58,7 @@
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
         <artifactId>bom-2.249.x</artifactId>
-        <version>21</version>
+        <version>23</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -75,7 +75,7 @@
     <dependency>
       <groupId>com.github.spotbugs</groupId>
       <artifactId>spotbugs-annotations</artifactId>
-      <version>4.2.0</version>
+      <version>4.2.1</version>
       <exclusions>
         <exclusion><!-- prevent transitive inclusion of jsr305 -->
           <groupId>com.google.code.findbugs</groupId>
@@ -190,7 +190,14 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
+        <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>8.40</version>
+            </dependency>
+          </dependencies>
         <configuration>
           <configLocation>google_checks.xml</configLocation>
           <failOnViolation>true</failOnViolation>
@@ -219,7 +226,7 @@
           <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs</artifactId>
-            <version>4.2.0</version>
+            <version>4.2.1</version>
           </dependency>
         </dependencies>
       </plugin>
