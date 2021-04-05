@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>4.16</version>
+    <version>4.17</version>
     <relativePath />
   </parent>
 
@@ -38,7 +38,7 @@
     <changelist>999999-SNAPSHOT</changelist>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
-    <jenkins.version>2.249.1</jenkins.version>
+    <jenkins.version>2.263.1</jenkins.version>
     <java.level>8</java.level>
     <linkXRef>false</linkXRef>
     <!-- Plugin intentionally does not deliver javadoc. -->
@@ -56,8 +56,8 @@
     <dependencies>
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
-        <artifactId>bom-2.249.x</artifactId>
-        <version>23</version>
+        <artifactId>bom-2.263.x</artifactId>
+        <version>26</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -74,7 +74,7 @@
     <dependency>
       <groupId>com.github.spotbugs</groupId>
       <artifactId>spotbugs-annotations</artifactId>
-      <version>4.2.1</version>
+      <version>4.2.2</version>
       <exclusions>
         <exclusion><!-- prevent transitive inclusion of jsr305 -->
           <groupId>com.google.code.findbugs</groupId>
@@ -194,7 +194,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>8.40</version>
+              <version>8.41.1</version>
             </dependency>
           </dependencies>
         <configuration>
@@ -211,7 +211,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.2.0</version>
+        <version>4.2.2</version>
         <configuration>
           <plugins>
             <plugin>
@@ -225,7 +225,7 @@
           <dependency>
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs</artifactId>
-            <version>4.2.1</version>
+            <version>4.2.2</version>
           </dependency>
         </dependencies>
       </plugin>

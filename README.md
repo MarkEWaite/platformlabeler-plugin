@@ -1,7 +1,5 @@
 # Platform Labeler Plugin
 
-[![Build Status](https://ci.jenkins.io/job/Plugins/job/platformlabeler-plugin/job/master/badge/icon)](https://ci.jenkins.io/job/Plugins/job/platformlabeler-plugin/job/master/)
-[![GitHub release](https://img.shields.io/github/release/jenkinsci/platformlabeler-plugin.svg?label=changelog)](https://github.com/jenkinsci/platformlabeler-plugin/releases/latest)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MarkEWaite_platformlabeler-plugin&metric=alert_status)](https://sonarcloud.io/dashboard?id=MarkEWaite_platformlabeler-plugin)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3537/badge)](https://bestpractices.coreinfrastructure.org/projects/3537)
 
@@ -11,12 +9,12 @@ Labels commonly include operating system name, version, and architecture.
 
 | Platform                   | OS Name            | Version        | Architecture |
 | -------------------------- | ------------------ | -------------- | ------------ |
-| Alpine                     | `Alpine`           | `3.12.3`       | `amd64`      |
-| Alpine                     | `Alpine`           | `3.13.0`       | `amd64`      |
+| Alpine 3.12                | `Alpine`           | `3.12.6`       | `amd64`      |
+| Alpine 3.13                | `Alpine`           | `3.13.4`       | `amd64`      |
 | Amazon Linux 2             | `Amazon`           | `2`            | `amd64`      |
-| CentOS 7                   | `CentOS`           | `7.8.2003`     | `amd64`      |
-| CentOS 8                   | `CentOS`           | `8.2.2004`     | `amd64`      |
-| Clear Linux                | `clear-linux-os`   | `34190`        | `amd64`      |
+| CentOS 7                   | `CentOS`           | `7.9.2009`     | `amd64`      |
+| CentOS 8                   | `CentOS`           | `8.3.2011`     | `amd64`      |
+| Clear Linux                | `clear-linux-os`   | `34440`        | `amd64`      |
 | Debian 9                   | `Debian`           | `9.13`         | `amd64`      |
 | Debian 10                  | `Debian`           | `10`           | `aarch64`    |
 | Debian 10                  | `Debian`           | `10`           | `amd64`      |
@@ -27,9 +25,10 @@ Labels commonly include operating system name, version, and architecture.
 | FreeBSD 11                 | `freebsd`          | `11.4-STABLE`  | `amd64`      |
 | FreeBSD 12                 | `freebsd`          | `12.2-RELEASE` | `amd64`      |
 | Linux Mint 19.3            | `LinuxMint`        | `19.03`        | `amd64`      |
+| openSUSE Leap              | `openSUSE`         | `15.2`         | `amd64`      |
 | Oracle Linux 7             | `OracleServer`     | `7.9`          | `amd64`      |
 | Oracle Linux 8             | `OracleServer`     | `8.3`          | `amd64`      |
-| Raspbian 9                 | `Raspbian`         | `9.11`         | `arm`        |
+| Raspbian 9                 | `Raspbian`         | `9.13`         | `arm`        |
 | Raspbian 10                | `Raspbian`         | `10`           | `arm`        |
 | Red Hat Enterprise Linux 7 | `RedHatEnterprise` | `7.9`          | `amd64`      |
 | Red Hat Enterprise Linux 8 | `RedHatEnterprise` | `8.3`          | `amd64`      |
