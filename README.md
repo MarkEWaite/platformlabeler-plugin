@@ -20,18 +20,18 @@ Labels commonly include operating system name, version, and architecture.
 | Debian 10                  | `Debian`           | `10`           | `amd64`      |
 | Debian testing             | `Debian`           | `testing`      | `amd64`      |
 | Debian unstable            | `Debian`           | `unstable`     | `amd64`      |
-| Fedora 32                  | `Fedora`           | `32`           | `amd64`      |
 | Fedora 33                  | `Fedora`           | `33`           | `amd64`      |
+| Fedora 34                  | `Fedora`           | `34`           | `amd64`      |
 | FreeBSD 11                 | `freebsd`          | `11.4-STABLE`  | `amd64`      |
 | FreeBSD 12                 | `freebsd`          | `12.2-RELEASE` | `amd64`      |
 | Linux Mint 19.3            | `LinuxMint`        | `19.03`        | `amd64`      |
-| openSUSE Leap              | `openSUSE`         | `15.2`         | `amd64`      |
+| openSUSE Leap              | `openSUSE`         | `15.3`         | `amd64`      |
 | Oracle Linux 7             | `OracleServer`     | `7.9`          | `amd64`      |
-| Oracle Linux 8             | `OracleServer`     | `8.3`          | `amd64`      |
+| Oracle Linux 8             | `OracleServer`     | `8.4`          | `amd64`      |
 | Raspbian 9                 | `Raspbian`         | `9.13`         | `arm`        |
 | Raspbian 10                | `Raspbian`         | `10`           | `arm`        |
 | Red Hat Enterprise Linux 7 | `RedHatEnterprise` | `7.9`          | `amd64`      |
-| Red Hat Enterprise Linux 8 | `RedHatEnterprise` | `8.3`          | `amd64`      |
+| Red Hat Enterprise Linux 8 | `RedHatEnterprise` | `8.4`          | `amd64`      |
 | Scientific 7               | `Scientific`       | `7.9`          | `amd64`      |
 | SLES 12                    | `SUSE`             | `12.4`         | `amd64`      |
 | SLES 15                    | `SUSE`             | `15`           | `amd64`      |
@@ -39,6 +39,7 @@ Labels commonly include operating system name, version, and architecture.
 | Ubuntu 18                  | `Ubuntu`           | `18.04`        | `ppc64le`    |
 | Ubuntu 18                  | `Ubuntu`           | `18.04`        | `s390x`      |
 | Ubuntu 20                  | `Ubuntu`           | `20.04`        | `amd64`      |
+| Ubuntu 21                  | `Ubuntu`           | `21.04`        | `amd64`      |
 | Windows 10                 | `windows`          | `10.0`         | `amd64`      |
 
 On Linux computers, the plugin uses the output of the [`lsb_release`](https://linux.die.net/man/1/lsb_release) command.
