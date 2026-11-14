@@ -1,2 +1,2 @@
-FROM ubuntu:noble-20261024.1
+FROM ubuntu:noble-20261110
 RUN apt-get update && apt-get install -y lsb-release
